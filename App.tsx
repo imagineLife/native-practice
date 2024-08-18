@@ -17,7 +17,7 @@ import { ListItem } from "./components/ListItem";
 
 */
 
-const styles = StyleSheet.create({
+const s = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -26,10 +26,9 @@ const styles = StyleSheet.create({
 });
 
 export default function App() {
-  const { container } = styles;
   const listIitems = ["Coffee Water", "strawberries"];
   return (
-    <View style={container}>
+    <View style={s.container}>
       {listIitems.map((itm) => (
         <ListItem name={itm} key={itm} />
       ))}
