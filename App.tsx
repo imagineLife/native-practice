@@ -22,20 +22,21 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     justifyContent: "center",
   },
+  itemContainer: {
+    borderBottomWidth: 1,
+    borderBottomColor: "#1a759f",
+    paddingHorizontal: 8,
+    paddingVertical: 16,
+  },
+  itemText: { fontSize: 18, fontWeight: "200" },
 });
 
 export default function App() {
+  const { container, itemContainer, itemText } = styles;
   return (
-    <View style={styles.container}>
-      <View
-        style={{
-          borderBottomWidth: 1,
-          borderBottomColor: "#1a759f",
-          paddingHorizontal: 8,
-          paddingVertical: 16,
-        }}
-      >
-        <Text style={{ fontSize: 18, fontWeight: "200" }}>
+    <View style={container}>
+      <View style={itemContainer}>
+        <Text style={itemText}>
           Open up App.tsx to start working on your app!
         </Text>
         <Text>{PixelRatio.get()} Pixel Ratio</Text>
