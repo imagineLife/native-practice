@@ -47,16 +47,15 @@ export function ListItem({ name }: ListItemProps) {
     );
   };
 
-  const { button, buttonText, itemContainer, itemText } = styles;
   return (
-    <View style={itemContainer}>
-      <Text style={itemText}>{name}</Text>
+    <View style={styles.itemContainer}>
+      <Text style={styles.itemText}>{name}</Text>
       <TouchableOpacity
         onPress={handleDelete}
         activeOpacity={0.8}
-        style={button}
+        style={styles.button}
       >
-        <Text style={buttonText}>Delete</Text>
+        <Text style={styles.buttonText}>Delete</Text>
       </TouchableOpacity>
     </View>
   );
