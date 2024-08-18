@@ -26,11 +26,19 @@ const s = StyleSheet.create({
 });
 
 export default function App() {
-  const listIitems = ["Coffee Water", "strawberries"];
+  const listIitems = [
+    {
+      text: "Coffee Water",
+      completed: true,
+    },
+    {
+      text: "strawberries",
+    },
+  ];
   return (
     <View style={s.container}>
       {listIitems.map((itm) => (
-        <ListItem name={itm} key={itm} />
+        <ListItem name={itm.text} key={itm.text} completed={itm.completed} />
       ))}
       <StatusBar style="auto" />
     </View>

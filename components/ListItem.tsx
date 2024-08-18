@@ -18,17 +18,26 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     borderBottomWidth: 1,
-    borderBottomColor: "#1a759f",
+    borderBottomColor: theme.colorCerulean,
     paddingHorizontal: 8,
     paddingVertical: 16,
+  },
+  completedContainer: {
+    backgroundColor: theme.colorLightGrey,
+    borderBottomColor: theme.colorLightGrey,
+  },
+  completedText: {
+    textDecorationLine: "line-through",
+    textDecorationColor: theme.colorGray,
   },
   itemText: { fontSize: 18, fontWeight: "200" },
 });
 
 type ListItemProps = {
   name: string;
+  completed?: boolean;
 };
-export function ListItem({ name }: ListItemProps) {
+export function ListItem({ completed, name }: ListItemProps) {
   const handleDelete = () => {
     Alert.alert(
       "Are you sure you want to delete this?",
@@ -48,8 +57,15 @@ export function ListItem({ name }: ListItemProps) {
   };
 
   return (
-    <View style={styles.itemContainer}>
-      <Text style={styles.itemText}>{name}</Text>
+    <View
+      style={[
+        styles.itemContainer,
+        completed ? styles.completedContainer : null,
+      ]}
+    >
+      <Text style={[styles.itemText, completed ? styles.completedText : null]}>
+        {name}
+      </Text>
       <TouchableOpacity
         onPress={handleDelete}
         activeOpacity={0.8}
