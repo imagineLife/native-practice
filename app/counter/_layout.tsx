@@ -9,7 +9,7 @@ export default function CounterLayout() {
         options={{
           title: "Counter",
           headerRight: () => (
-            <Link href="/history">
+            <Link href="/counter/history">
               <MaterialIcons name="history" size={32} color={theme.colorGray} />
             </Link>
           ),
