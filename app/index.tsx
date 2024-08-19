@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import { ListItem } from "./components/ListItem";
+import { ListItem } from "./../components/ListItem";
+import { Link } from "expo-router";
 /*
   React-Native v. html elements
   View
@@ -39,6 +40,12 @@ export default function App() {
   ];
   return (
     <View style={s.container}>
+      <Link
+        href="/counter"
+        style={{ textAlign: "center", marginBottom: 18, fontSize: 24 }}
+      >
+        Go to counter
+      </Link>
       {listIitems.map((itm) => (
         <ListItem name={itm.text} key={itm.text} completed={itm.completed} />
       ))}
