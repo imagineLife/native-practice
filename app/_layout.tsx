@@ -1,5 +1,6 @@
+import { AntDesign, Feather, FontAwesome5 } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
-
+import { theme } from "../theme";
 /*
   screens are in the stack
   - a new page/screen will render "ontop" of the previous screen, in a "stack"!
@@ -7,15 +8,34 @@ import { Tabs } from "expo-router";
 */
 export default function AppLayout() {
   return (
-    <Tabs>
-      <Tabs.Screen name="index" options={{ title: "Shopping List" }} />
+    <Tabs screenOptions={{ tabBarActiveTintColor: theme.colorCerulean }}>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: "Shopping List",
+          tabBarIcon: ({ color, size }) => {
+            return <Feather name="list" size={size} color={color} />;
+          },
+        }}
+      />
       <Tabs.Screen
         name="counter"
         options={{
           title: "Counter",
+          tabBarIcon: ({ color, size }) => {
+            return <AntDesign name="clockcircleo" size={size} color={color} />;
+          },
         }}
       />
-      <Tabs.Screen name="idea" options={{ title: "Idea" }} />
+      <Tabs.Screen
+        name="idea"
+        options={{
+          title: "Idea",
+          tabBarIcon: ({ color, size }) => {
+            return <FontAwesome5 name="lightbulb" size={size} color={color} />;
+          },
+        }}
+      />
     </Tabs>
   );
 }
