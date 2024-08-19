@@ -1,7 +1,7 @@
 import { router } from "expo-router";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function CounterScreen() {
+export default function Counter() {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={() => router.navigate("/idea")}>

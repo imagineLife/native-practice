@@ -25,6 +25,8 @@ export default function AppLayout() {
           tabBarIcon: ({ color, size }) => {
             return <AntDesign name="clockcircleo" size={size} color={color} />;
           },
+          // HIDE the "parent" header so that the "child" counter header displays
+          headerShown: false,
         }}
       />
       <Tabs.Screen
