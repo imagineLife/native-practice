@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+import { Tabs } from "expo-router";
 
 /*
   screens are in the stack
@@ -7,20 +7,15 @@ import { Stack } from "expo-router";
 */
 export default function AppLayout() {
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ title: "Shopping List" }} />
-      <Stack.Screen
+    <Tabs>
+      <Tabs.Screen name="index" options={{ title: "Shopping List" }} />
+      <Tabs.Screen
         name="counter"
         options={{
           title: "Counter",
-          presentation: "modal",
-          animation: "slide_from_bottom",
         }}
       />
-      <Stack.Screen
-        name="idea"
-        options={{ title: "Idea", presentation: "modal" }}
-      />
-    </Stack>
+      <Tabs.Screen name="idea" options={{ title: "Idea" }} />
+    </Tabs>
   );
 }
