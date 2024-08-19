@@ -15,6 +15,8 @@ import { ListItem } from "./components/ListItem";
     - try for {NaN ? ...val : null}
   - React-Native Button is never really used - it can't be styled
 
+  find icon-buttons to use in-app:
+  https://icons.expo.fyi/Index
 */
 
 const s = StyleSheet.create({
